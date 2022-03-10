@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HW3-Group2</title>
+
+  <!-- d3.js -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://d3js.org/topojson.v2.min.js"></script>
+
+  <!-- Custom Files -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;400;700&display=swap" rel="stylesheet">
+</head>
+<body id = "top_">
+  <div id="title">
+    <h2>2018年 公投案與市長選舉分析</h2>
+  </div>
+  <div id="top-left">
+    <div id="switch">
+      <ul class="tab-controls">
+        <li class="tab-controls__item">
+            <a href="#" id="tab-case7" class="tab-controls__link active" data-index="0">公投第七案</a>
+            <a href="#" id="tab-case8" class="tab-controls__link" data-index="1">公投第八案</a>
+            <a href="#" id="tab-case9" class="tab-controls__link" data-index="2">公投第九案</a>
+            <a href="#" id="tab-case10" class="tab-controls__link" data-index="3">公投第十案</a>
+            <a href="#" id="tab-case11" class="tab-controls__link" data-index="4">公投第十一案</a>
+            <a href="#" id="tab-case12" class="tab-controls__link" data-index="5">公投第十二案</a>
+            <a href="#" id="tab-case13" class="tab-controls__link" data-index="6">公投第十三案</a>
+            <a href="#" id="tab-case14" class="tab-controls__link" data-index="7">公投第十四案</a>
+            <a href="#" id="tab-case15" class="tab-controls__link" data-index="8">公投第十五案</a>
+            <a href="#" id="tab-case16" class="tab-controls__link" data-index="9">公投第十六案</a>
+            <a href="#" id="tab-town" class="tab-controls__link" data-index="10">縣市長選舉</a>
+          </li>
+        </ul>
+      </div>
+      <div id="switch" style = "margin-top: 10px;">
+        <ul class="tab-controls_data">
+          <li class="tab-controls__item_data">
+              <a href="#dataDiscription" id="reference" class="tab-controls__link_data">資料與設計說明</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <svg></svg>
+
+    <div id="mid-right">
+      <div id="legend">
+        <div class="h3">公投案 同意率(%)</div>
+        <div class="party-container">
+          <div class="legend-grid">
+            <span class="badge" style="background-color: #4A225D;"></span>
+            <span class="badge" style="background-color: #77428D;"></span>
+            <span class="badge" style="background-color: #D75455;"></span>
+            <span class="badge" style="background-color: #9F353A;"></span>
+            <br>
+            <span id="notpassCase" class="badge legend-text">&ensp;&#60;50%</span>
+            <span id="notpass50Case" class="badge legend-text">&ensp;&#60;50%</span>
+            <span id="pass50Case" class="badge legend-text">&ensp;&#62;50%</span>
+            <span id="passCase" class="badge legend-text">&ensp;&#62;60%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <div id="top-right">
+    <div id="tooltip" style="height: 220px;">
+      <div id="case-num" class="h2">公投第七案</div>
+      <div id="case-question" class="h3">你是否同意以「平均每年至少降低1%」之方式逐年降低火力發電廠發電量？</div>
+      <div id="case-analysis" class="h4"></div>
+    </div>
+    <div id="tooltip">
+      <div id="case-region" class="h2">台北市 內湖區</div>
+      <table>
+        <tr>
+          <th>
+            <div id="donut" class = "donutRange"></div>
+          </th>
+          <th>
+            <div class="vote-count-area">
+              <div id = "vote-String" class="badge" style="background-color: #4F4F48;">公投第7案同意率</div>
+            </div>
+            <span id="vote-total-pass" class="vote-count highlight" style="color: #4F4F48;">77.74%</span>
+            <div class="vote-count-area">
+              <div class="badge" style="background-color: #9F353A;">該區同意率</div>
+            </div>
+            <span id="vote-pass" class="vote-count highlight" style="color: #4F4F48;">77.92%</span>
+            <div class="vote-count-area">
+              <div class="badge" style="background-color: #4A225D;">該區不同意率</div>
+            </div>
+            <span id="vote-notpass" class="vote-count highlight" style="color: #4F4F48;">22.08%</span>
+          </th>
+          </th>
+        </tr>
+      </table>
+    </div>
+    <div id="tooltip">
+      <div id="vote-region" class="h2">台北市 內湖區</div>
+      <table>
+        <tr>
+          <th>
+            <div id="donutMajor" class = "donutRange2"></div>
+          </th>
+          <th>
+            <div class="vote-count-area">
+              <div class="badge" style="background-color: #0B346E;">國民黨</div>
+            </div>
+            <span id="vote-count-1" class="vote-count highlight" style="color: #4F4F48;">41.01%</span>
+            <div class="vote-count-area">
+              <div class="badge" style="background-color: #1B813E;">民進黨</div>
+            </div>
+            <span id="vote-count-2" class="vote-count highlight" style="color: #4F4F48;">14.49%</span>
+            <div class="vote-count-area">
+              <div class="badge" style="background-color: #91989F;">其　他</div>
+            </div>
+            <span id="vote-count-3" class="vote-count highlight" style="color: #4F4F48;">44.50%</span>
+          </th>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <table>
+    <tr>
+      <th>
+        <div id = "dataReference">
+          <h3>資料來源</h3>
+          <div id="dataItem">
+            <a href="https://db.cec.gov.tw/histMain.jsp?voteSel=20181101C1" style="text-align: left;">2018縣市長選舉投票資料</a>
+          </div>
+          <div id="dataItem">
+            <a href="https://data.gov.tw/dataset/95883">2018公投計票結果</a>
+          </div>
+          <div id="dataItem" style="margin-bottom: 20px;">
+            <a href="https://gist.github.com/PM25/2674f28945c36a394aa4d4c9e410485a">台灣鄉鎮topojson</a>
+          </div>
+          <h3>視覺畫圖表來源</h3>
+          <div id="dataItem">
+            <a href="https://medium.com/@imandylin2_38094/天下雜誌2018台灣選舉地圖製作分享-技術的部分-de82c38da77b">台灣地圖</a>
+          </div>
+          <div id="dataItem">
+            <a href="https://medium.com/@kj_schmidt/making-an-animated-donut-chart-with-d3-js-17751fde4679">Donut chart</a>
+          </div>
+        </div>
+        <div id = "toTop">
+          <div id="switch">
+            <ul class="tab-controls_top">
+              <li class="tab-controls__item_top">
+                  <a href="#top_" id="top" class="tab-controls__link_top">TOP</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </th>
+      <th>
+      <div id = "dataDiscription">
+        <h3>設計選擇</h3>
+        <h4>1.分層設色圖</h4>
+          <p>◆各公投案的投票分析。深紅色為該區同意率大於該案的同意率，而淺紅色為該區同意率過半但小於該案同意率；深紫色為該區不同意率大於該案的不同意率，而淺紫色為該區不同意率過半但小於該案的不同意率。</p>
+          <p>◆縣市長黨營當選狀態。藍色為國民黨當選，綠色為民進黨當選，灰色則為其他黨的當選。<p>
+        <h4>2.環圈圖</h4>
+          <p>◆呈現各區公投案投票比率，紅色為同意，紫色為不同意。</p>
+          <p>◆呈現各區縣市長投票比率，藍色為國民黨，綠色為民進黨，灰色為其他黨籍的比率總和。</p>
+        <h4>3.操作說明</h4>
+          <p>◆當游標移至地圖的地區上時，會顯示該區名稱及投票票數。</p>
+          <p>◆當游標移至地圖上時，利用滾輪縮放地圖。</p>
+          <p>◆查看投票案時，於右上角方格分析公投及縣市長投票關聯。</p>
+          <p>◆查看公投案時，當游標移至地圖的地區上時，公投案及縣市長的環圈圖都會根據地區的投票比率有所更動。</p>
+      </div>
+      <div id = "dataDiscription" style="top: 153.5vh;">
+        <h3>設計過程考量</h3>
+        <h4>1.色塊設計</h4>
+          <p>在設計色塊時，同意為紅色、不同意為紫色，為了能呈現同一立場的高低差異，用相同色系的深淺來做區別，且正反方利用紅跟紫兩個接近對比的顏色，更能輕易看出兩者的差異性。縣市長投票案則以兩黨的代表色以及灰色顯示結果。</p>
+        <h4>2.顯示票數</h4>
+          <p>為了避免資料改變時，容易發生的盲視問題，在游標於地圖上移動時，會出現資訊欄，除了顯示當前選擇的地區之外，也會顯示票數的資訊。</p>
+        <h4>3.環圈圖雙資訊變動</h4>
+          <p>基於眼動記憶力有限的問題，環圈圖的面積比例，可以讓人輕易看出得票的比率，且公投案及縣市長投票案的環圈圖同時變換，容易清楚了解兩者之間的關聯。</p>
+        </div>
+        <div id = "dataDiscription" style="top: 189vh;">
+        <h3>原始圖表分析比較
+          <a href="https://www.thenewslens.com/article/108609" class="newslink">原始新聞</a>
+        </h3>
+          <h4>1.長條圖</h4>
+            <p>原始的新聞當中使用長條圖作為通過比率的呈現，但長條圖在兩個票數相近時，會有難以分辨的狀況，因此，需要多加入文字資訊作為提示。</p>
+          <h4>2.該案總通過率</h4>
+            <p>該新聞只提到每個公投案的總投票數，無法得知每一地區的投票狀況，也沒有當年縣市長選舉的相關資料，因此，只能從中得知單一訊息。</p>
+          <h4>3.票數與比率</h4>
+            <p>在此視覺化呈現當中，我們認為比率能傳達得比票數還要清楚明瞭，因此，該新聞在長條圖末端顯現的票數，其傳達的資訊重要度較為薄弱。</p>
+        </div>
+        <div id = "dataDiscription" style="top: 221.5vh;">
+        <h3>改良選擇和分析</h3>
+        <h4>1.環圈圖</h4>
+          <p>由於長條圖偶有難以辨讀的問題，因此，我們利用環圈圖製作投票比率，對於二分法的公投案，是相當易讀的一種圖表。</p>
+        <h4>2.各區的通過率</h4>
+          <p>總通過率難以將公投案與縣市政府執政有所聯想，因此，利用地圖表現總體及各區的投票狀況，再結合公投案及縣市長投票案的環圈圖分析兩者關係。</p>
+        <h4>3.各區的通過率</h4>
+          <p>由於票數只是一個初步了解的概念數據，因此，移至該區的地圖位置上會顯示票數，再看到環圈圖後，對於該區的投票狀態會有深入的了解。</p>
+        </div>
+      </th>
+
+      </div>
+    </tr>
+  </table>
+  <script src="index.js"></script>
+</body>
+</html>
