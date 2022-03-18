@@ -32,4 +32,4 @@ Reference
 
 Supplement
 ----
-  >The project was displayed on our teacher's website. If you want to understand our systems work in details, you can manipulate our system via above link.
+  >The project is displayed on our teacher's website. If you want to understand our systems work in details, you can manipulate our system via above link.
