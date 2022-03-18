@@ -32,3 +32,4 @@ Reference
 
 Supplement
 ----
+  >The project was displayed on our teacher's website. If you wonder the pratical operation in details, you can visit it via above link. 
