@@ -3,7 +3,8 @@ Demo Website: http://140.119.162.201:3000/homework/hw3-21/02/
 
 Introduction
 ----
-  >The project is aim to show whether each referendum proposal was impacted by the claims of the political parties. We showed the scale of approval or not with color intensity on the Taiwan map which divide by the districts. Red color was represent that the district was approved the referendum proposal, and purple was otherwise. Moreover, we drawed the ratio of approval or not with doughnut chart, and so did the ratio of mayor election result is. Therefore, we can observe the relationship between the referendum proposal and political parties. Each referendum proposal content is in detail on the right corner area.
+
+  >The project is aim to show whether each referendum proposal was impacted by the claims of the political parties. We showed the scale of   approval or not with color intensity on the Taiwan map which divide by the districts. Red color was represent that the district was approved the referendum proposal, and purple was otherwise. Moreover, we drawed the ratio of approval or not with doughnut chart, and so did the ratio of mayor election result is. Therefore, we can observe the relationship between the referendum proposal and political parties. Each referendum proposal content is in detail on the right corner area.
 
 
 Techniques
@@ -19,7 +20,7 @@ Techniques
 
 Environment
 ----
-  >We didn't set public to this project. Therefore, we accessed to the localhost via Xampp. Then, we made Apache server enable. After moving all the files under the path /xampp/htdoc, the project can be operated on your own pc.
+  >We didn't set public to this project. Therefore, we accessed to the localhost via Xampp. Then, we made Apache server enable. After moving all the files to the path /xampp/htdoc, the project can be implemented on your own pc.
 
 Reference
 ----
