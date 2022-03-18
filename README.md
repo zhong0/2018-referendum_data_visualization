@@ -3,24 +3,23 @@ Demo Website: http://140.119.162.201:3000/homework/hw3-21/02/
 
 Introduction
 ----
-
-  >The project is aim to show whether each referendum proposal was impacted by the claims of the political parties. We showed the scale of   approval or not with color intensity on the Taiwan map which divide by the districts. Red color was represent that the district was approved the referendum proposal, and purple was otherwise. Moreover, we drawed the ratio of approval or not with doughnut chart, and so did the ratio of mayor election result is. Therefore, we can observe the relationship between the referendum proposal and political parties. Each referendum proposal content is in detail on the right corner area.
+  >The project is aim to analyze whether each referendum proposal is impacted by the claims of the political parties. We show the scale of approval or not with color intensity on the Taiwan map which divide by the districts. Red color is presented that the district is approved the referendum proposal, and purple is not. Moreover, we display the ratio of approval or not in each region with doughnut chart, and so does the ratio of mayor election result. Therefore, we can simply figure out the relationship between the referendum proposal and political parties. Each referendum proposal content is written in details on the right corner area.
 
 
 Techniques
 ----
 * ### Data
-  >The election data was from Central Election Commsion in Taiwan. We formed the data to Json format. The data was set up in Js file with Document belonging to Web API. However, the map data was the topoJson format and set up with topoJson library. 
+  >The election data is from Central Election Commission in Taiwan. We formed the data to Json format. The data was set in Javascript files with Document method belonging to Web API. The map data is the topoJson format and set with topoJson library.
 
 * ### UI Operation
-  >The animation and interaction with the user are mainly used the svg library based on D3 js. The method geoPath(), projection(), and etc., are contributed to map operation. The data is read with the pie form to draw the doughnut chart. To modify the attributes of the object, attr() method is used. To make it animated, transition() is applied.
+  >The animation and interaction with the user are mainly applied the svg library based on D3 js. The method geoPath(), projection(), and etc., are contributed to map operation. The data converts to the pie form to draw the doughnut chart. To modify the attributes of the object, attr() method is used. To animate it, transition() method is applied.
 
 * ### User Interface
   >The layout is arranged by html. The attributes are designed by css.
 
 Environment
 ----
-  >We didn't set public to this project. Therefore, we accessed to the localhost via Xampp. Then, we made Apache server enable. After moving all the files to the path /xampp/htdoc, the project can be implemented on your own pc.
+  >We didn't set public for this project. Therefore, we accessed to the localhost via Xampp. Then, we made Apache server enable. After moving all the files to the path /xampp/htdoc, the project can be implemented on your own pc.
 
 Reference
 ----
@@ -33,4 +32,4 @@ Reference
 
 Supplement
 ----
-  >The project was displayed on our teacher's website. If you wonder the pratical operation in details, you can visit it via above link. 
+  >The project was displayed on our teacher's website. If you want to understand our systems work in details, you can manipulate our system via above link.
