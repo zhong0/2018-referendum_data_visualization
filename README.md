@@ -19,7 +19,7 @@ Techniques
 
 Environment
 ----
-  >We didn't set public for this project. Therefore, we accessed to the localhost via Xampp. Then, we made Apache server enable. After moving all the files to the path /xampp/htdoc, the project can be implemented on your own PC.
+  >We didn't set public for this project. Therefore, we accessed to the localhost via XAMPP. Then, we made Apache server enable. After moving all the files to the path /xampp/htdoc, the project can be implemented on your own PC.
 
 Reference
 ----
