@@ -15,7 +15,7 @@ Techniques
   >The animation and interaction with the user are mainly applied the svg library based on D3 js. The method geoPath(), projection(), and etc., support to the map operation. The data converts to the pie form to draw the doughnut chart. To modify the attributes of the object, attr() method is used. To animate it, transition() method is applied.
 
 * ### User Interface
-  >The layout is arranged by html. The attributes are designed by css.
+  >The layout is arranged by HTML. The attributes are designed by CSS.
 
 Environment
 ----
